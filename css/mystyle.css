@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/* ========================================
+   1. 基本スタイル設定
+   ======================================== */
+body {
+    background-color: #fff0f5;
+    background-image: url(../image/star.png);
+    background-repeat: repeat;
+    background-position: top left;
+    background-attachment: scroll;
+    color: #333333;
+    font-family: "Yomogi", cursive, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* サブページ用の少し異なる背景デザイン */
+body.sub-page {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #ffb6c1;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    /* box-shadow プロパティの使用 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-size: 36px;
+    font-family: sans-serif;
+    background: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        magenta
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+/* ========================================
+   2. 共通ナビゲーション
+   ======================================== */
+nav.main-nav {
+    margin-bottom: 20px;
+}
+
+nav.main-nav a {
+    display: inline-block;
+    background-color: #ffd1dc;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   3. リンク擬似クラス & text-decoration
+   ======================================== */
+a:link {
+    color: #d14836;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #8b008b;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff007f;
+    text-decoration: none;
+}
+
+a:active {
+    color: #ff4500;
+    text-decoration: underline overline;
+}
+
+/* ナビゲーションメニューのリンク装飾調整 */
+nav.main-nav a:link,
+nav.main-nav a:visited {
+    color: #333333;
+    text-decoration: none;
+}
+nav.main-nav a:hover {
+    background-color: #ffb6c1;
+    color: #ffffff;
+    text-decoration: none;
+}
+nav.main-nav a:active {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
+
+/* ========================================
+   4. パンくずリスト
+   ======================================== */
+.breadcrumb {
+    margin: 10px auto 20px auto;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    max-width: 900px;
+}
+
+.breadcrumb li {
+    display: inline; /* 必須要件: display: inline; */
+    font-size: 14px;
+}
+
+.breadcrumb li+li:before {
+    content: " > ";
+    padding: 0 5px;
+    color: #999999;
+}
+
+/* ========================================
+   5. メイン・記事レイアウト
+   ======================================== */
+article {
+    width: 900px;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+}
+
+section {
+    background-color: white;
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    /* box-shadow プロパティの使用 */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #ff6699;
+    border-bottom: 2px dashed #ffb6c1;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #cc6699;
+}
+
+/* 画像と要素の設定 */
+.mainimage {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 回り込み（float）と解除（clear） */
+.float-img {
+    float: left;
+    margin: 0 20px 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ffb6c1;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+/* リストのスタイル指定 */
+.memorylist {
+    list-style-type: square;
+}
+
+/* list-style-image プロパティの使用 */
+.sub-list {
+    list-style-image: url('../image/hoshi.png'); /* 画像が無い場合は代用されるかアイコン化 */
+    padding-left: 30px;
+}
+
+.ranking {
+    list-style-type: upper-roman;
+}
+
+/* 目次スタイル */
+.toc-box {
+    background-color: #fffaf0;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.back-to-top {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ========================================
+   6. フッター & バリデータ
+   ======================================== */
+footer {
+    background-color: #ffb6c1;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer p.validator {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+footer p.validator a {
+    margin: 0 5px;
+}
+
+/* 応答性（レスポンシブ） */
+@media screen and (max-width:768px){
+    article {
+        width: 95%;
+    }
+    .float-img {
+        float: none;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+}
